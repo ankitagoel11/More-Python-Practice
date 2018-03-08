@@ -1,5 +1,5 @@
  # Creates a variable with a string "Frankfurter"
-title = input("Please enter the job role")
+title = input("Please enter the job role ")
 
 # Creates a variable with an integer 80
 years = 80
