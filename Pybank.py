@@ -2,7 +2,9 @@ import csv
 import os
 csvpath = os.path.join('budget_data_1.csv')
 months = []
-sum=1
+revenue = []
+sum = 1
+revenue = 0
 
 with open(csvpath, newline='') as csvfile:
     
@@ -15,11 +17,15 @@ with open(csvpath, newline='') as csvfile:
         
         print(row)
         months.append(row[0])
+        revenue = revenue + int(row[1])
+
 
 print (months)   
 
 for i in months:
     print (i)
     sum = months.index(i)
+   
 
 print (sum)
+print (revenue)
