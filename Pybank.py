@@ -1,10 +1,14 @@
 import csv
 import os
+import statistics
+
 csvpath = os.path.join('budget_data_1.csv')
 months = []
 revenue = []
 sum = 1
 revenue = 0
+test ={}
+count1 = 0
 
 with open(csvpath, newline='') as csvfile:
     
@@ -12,20 +16,16 @@ with open(csvpath, newline='') as csvfile:
     csvreader = csv.reader(csvfile, delimiter=',')
     next(csvreader)
     
+
     #  Each row is read as a row
     for row in csvreader:
         
-        print(row)
-        months.append(row[0])
+        months.append(row[1])
         revenue = revenue + int(row[1])
+        
+  
 
-
-print (months)   
-
-for i in months:
-    print (i)
-    sum = months.index(i) + 1
-   
-
+print (len(months))
 print (sum)
+print(revenue/len(months))
 print (revenue)
