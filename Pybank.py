@@ -24,7 +24,7 @@ print (months)
 
 for i in months:
     print (i)
-    sum = months.index(i)
+    sum = months.index(i) + 1
    
 
 print (sum)
