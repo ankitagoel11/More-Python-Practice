@@ -9,6 +9,9 @@ sum = 1
 revenue = 0
 test ={}
 count1 = 0
+value1 = 0
+value2 = 0
+avgchange = []
 
 with open(csvpath, newline='') as csvfile:
     
@@ -22,9 +25,10 @@ with open(csvpath, newline='') as csvfile:
         
         months.append(row[1])
         revenue = revenue + int(row[1])
-        
+      
+avgchange = [(a + b) / 2 for a, b in zip(months[::2], months[1::2]] 
   
-
+print (avgchange)
 print (len(months))
 print (sum)
 print(revenue/len(months))
