@@ -1,17 +1,18 @@
 import csv
 import os
 import statistics
+import numpy
 
 csvpath = os.path.join('budget_data_1.csv')
 months = []
 revenue = []
-sum = 1
 revenue = 0
+avg_change = []
 test ={}
 count1 = 0
 value1 = 0
 value2 = 0
-avgchange = []
+i=0
 
 with open(csvpath, newline='') as csvfile:
     
@@ -25,11 +26,19 @@ with open(csvpath, newline='') as csvfile:
         
         months.append(row[1])
         revenue = revenue + int(row[1])
-      
-avgchange = [(a + b) / 2 for a, b in zip(months[::2], months[1::2]] 
-  
-print (avgchange)
+   
+
+    while i<len(months) - 1:
+        value1 = months[i]
+        value2 = months[i+1]
+        avgchange = ((int(value1) - int(value2))/int(value1))*100 
+        avg_change.append(avgchange)
+        i = i+1
+       
+
+
+print(avgchange)
 print (len(months))
-print (sum)
 print(revenue/len(months))
 print (revenue)
+print (max(avg_change))
