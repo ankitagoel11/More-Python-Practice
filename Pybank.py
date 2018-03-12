@@ -39,10 +39,7 @@ with open(csvpath, newline='') as csvfile:
 s = avg_change.index(max(avg_change))
 t = avg_change.index(min(avg_change))
 r = numpy.mean(avg_change)
-print(avgchange)
-print(revenue/len(months))
-print(len(avg_change))
-print (min(avg_change))
+
 
 print (" Financial Analysis")
 print ("..........................")
@@ -51,3 +48,12 @@ print ("Total Revenue : $" + str(revenue))
 print ("Averge Revenue Change: $" + str(r))
 print ("Greatest increase in Revenue: " + str(date[s+1]) + " ($" + str(max(avg_change)) + ")")
 print ("Greatest decrease in Revenue: " + str(date[t+1]) + " ($" + str(min(avg_change)) + ")")
+
+with open("results_pybank.txt", "w") as text_file:
+    print (" Financial Analysis", file = text_file)
+    print ("..........................", file = text_file)
+    print ("Total number of months :" + str(len(months)), file = text_file)
+    print ("Total Revenue : $" + str(revenue), file = text_file)
+    print ("Averge Revenue Change: $" + str(r), file = text_file)
+    print ("Greatest increase in Revenue: " + str(date[s+1]) + " ($" + str(max(avg_change)) + ")", file = text_file)
+    print ("Greatest decrease in Revenue: " + str(date[t+1]) + " ($" + str(min(avg_change)) + ")", file = text_file)

@@ -1,0 +1,7 @@
+ Financial Analysis
+..........................
+Total number of months :41
+Total Revenue : $18971412
+Averge Revenue Change: $-6758.975
+Greatest increase in Revenue: Feb-16 ($1837235)
+Greatest decrease in Revenue: Aug-14 ($-1779747)
