@@ -3,7 +3,7 @@ import os
 import statistics
 import numpy
 
-csvpath = os.path.join('budget_data_1.csv')
+#defining variables and lists
 months = []
 revenue = []
 date =[]
@@ -14,6 +14,7 @@ count1 = 0
 value1 = 0
 value2 = 0
 i=0
+csvpath = os.path.join('budget_data_1.csv')
 
 with open(csvpath, newline='') as csvfile:
     
@@ -22,13 +23,13 @@ with open(csvpath, newline='') as csvfile:
     next(csvreader)
     
 
-    #  Each row is read as a row
+    #  Each row is read as a row and monthly revenue values are stored in months list
     for row in csvreader:
         date.append(row[0])
         months.append(row[1])
         revenue = revenue + int(row[1])
    
-
+    #calculating change in every month and saving it to the avg_change list
     while i<len(months) - 1:
         value1 = months[i]
         value2 = months[i+1]
@@ -36,9 +37,9 @@ with open(csvpath, newline='') as csvfile:
         avg_change.append(avgchange)
         i = i+1
         
-s = avg_change.index(max(avg_change))
-t = avg_change.index(min(avg_change))
-r = numpy.mean(avg_change)
+s = avg_change.index(max(avg_change)) # extracting index to get corresponding dat value
+t = avg_change.index(min(avg_change)) # extracting index to get corresponding dat value
+r = numpy.mean(avg_change)            #taking average of the change
 
 
 print (" Financial Analysis")
