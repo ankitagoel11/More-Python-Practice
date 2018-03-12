@@ -5,7 +5,8 @@ import numpy as np
 
 vote_count = []
 candidates = []
-
+i=0
+vote_percent =[]
 
 csvpath = os.path.join('election_data_1.csv')
 
@@ -25,11 +26,22 @@ with open(csvpath, newline='') as csvfile:
 for x in my_new_list:
     vote_count.append(candidates.count(x))
 
+for y in vote_count:
+    vote_percent.append((y*100)/len(candidates))
+
+print(vote_percent)
+
 print(max(vote_count))
 
+print ("Election Results")
+print ("..................................")
+print ("Total Votes: " + str(len(candidates)))
+print ("..................................")
+for x in my_new_list:
+    print( x + ":" + str(vote_percent[i]) + "%  (" + str(vote_count[i]) + ")"  )
+    i += 1
 
-
-
+print ("..................................")
 
     
 
